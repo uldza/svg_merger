@@ -1,6 +1,8 @@
 Gulp task for SVG image combination
 ============================
 
+Tested for avocode exported svgs
+
 Requirments
 ---------------
 
