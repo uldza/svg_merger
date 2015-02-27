@@ -1,0 +1,19 @@
+{
+  "name": "svg_merger",
+  "description": "Collection of tools to combine multiple svg images/icons into one",
+  "author": "UM <uldis.megnis@gmail.com>",
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/uldza/svg_merger.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-svg-sprite": "^1.0.18",
+    "vinyl": "^0.4.6"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
