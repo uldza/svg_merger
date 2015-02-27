@@ -23,19 +23,24 @@ var config                  = {
 gulp.task('merge_svg', function() {
     return gulp
         .src('src/*.svg')
-        .pipe(cheerio({
-            run: function($) {
-                $('[fill]').removeAttr('fill');
-            },
-            parserOptions: { xmlMode: true }
-        }))
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [
               {removeViewBox: true},
               {removeDesc: true},
-              {removeUselessStrokeAndFill: true}
+              {removeUselessStrokeAndFill: true},
+              {cleanupEnableBackground: true}
             ]
+        }))
+        .pipe(cheerio({
+            run: function($) {
+                $('[fill]').removeAttr('fill');
+                $('svg').removeAttr('preserveAspectRatio');
+                $('path').removeAttr('class');
+                $('path').removeAttr('fill-rule');
+                $('defs').remove();
+            },
+            parserOptions: { xmlMode: true }
         }))
         .pipe( svgSprite(config) )
         .pipe(gulp.dest('optimized'));

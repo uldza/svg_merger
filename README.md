@@ -1,6 +1,8 @@
 Gulp task for SVG image combination
 ============================
 
+Cleans out unneeded svg attributes for my needs
+
 Tested for avocode exported svgs
 
 Requirments
